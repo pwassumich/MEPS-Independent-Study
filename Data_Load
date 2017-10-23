@@ -13,10 +13,35 @@ MEPS_8= read.xport("./h121.ssp")
 MEPS_7= read.xport("./h113.ssp")
 MEPS_6= read.xport("./h105.ssp")
 ##Start to check data
-head(h181)
+head(MEPS_15)
 summary(h181)
 str(h181)
 nrow(h181)
 View(h181)
-##Name variables
-Ins_status<-MEPS_15$HPRAP15;Ins_status
+
+##Variable summary
+##Key variables/columns: 
+# exchange enrollee Dec 15: HPXDE15; Note very small number (720/35000)
+#INSAT53X: Insured at any time in r5
+#INSURC15: summary of insurance coverage
+#STPRAT15  (insured through state at any time)
+#location: region15, census as of end of year
+#TOTEXP15, total healthcare expenditures 2015; note individual expensditure categories available (e.g., emergency care spending)
+  #Can subset by exchange enrollee
+  # Can look at spend per enrollee, % participants enrolled
+##Demographic
+  #TTLP15X - person’s total income
+  #FAMINC15 - family’s total income
+  #RACEV1X, MARRY31X, LANGSPK, OCCCAT31
+
+
+#MEPS_2015
+MEPS_15_HX<-sum(MEPS_15$HPXDE15==1);MEPS_15_HX
+MEPS_15$HPXDE15
+
+
+
+
+
+
+
