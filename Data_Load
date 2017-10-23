@@ -1,0 +1,22 @@
+library(foreign)
+library(survey)
+getwd() #set working directory to wherever you are saving your files
+##Load data
+MEPS_15<-read.xport("./h181ssp/h181.ssp")
+MEPS_14= read.xport("./h171.ssp")
+MEPS_13= read.xport("./h163.ssp")
+MEPS_12= read.xport("./h155.ssp")
+MEPS_11= read.xport("./h147.ssp")
+MEPS_10= read.xport("./h138.ssp")
+MEPS_9= read.xport("./h129.ssp")
+MEPS_8= read.xport("./h121.ssp")
+MEPS_7= read.xport("./h113.ssp")
+MEPS_6= read.xport("./h105.ssp")
+##Start to check data
+head(h181)
+summary(h181)
+str(h181)
+nrow(h181)
+View(h181)
+##Name variables
+Ins_status<-MEPS_15$HPRAP15;Ins_status
