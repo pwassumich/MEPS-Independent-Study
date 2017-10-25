@@ -63,8 +63,11 @@ MEPS_15_U_P<-uninsured_15/length(MEPS_15_U_E); MEPS_15_U_P
 hist(MEPS_15$INSURC15)
 
 #MEPS14
-MEPS_14_HX<-sum(MEPS_14$HPXDE14==1);MEPS_14_HX/nrow(MEPS_14)
-hist(MEPS_15$INSURC15)
+MEPS_14_HX<-subset(MEPS_14,MEPS_14$HPXDE14==1)
+HX_14<-as.data.frame(cbind(nrow(MEPS_14_HX),nrow(MEPS_14_HX)/nrow(MEPS_14)));HX_14
+
+#MEPS13; exchange column not available!
+
 
 
 
