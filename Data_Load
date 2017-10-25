@@ -41,7 +41,30 @@ MEPS_15$HPXDE15
 
 
 
+#MEPS15
+#HX
+MEPS_15_HX<-subset(MEPS_15,MEPS_15$HPXDE15==1)
+Region_15_HX<-as.data.frame(cbind(sum(MEPS_15_HX$REGION15==1),sum(MEPS_15_HX$REGION15==2),sum(MEPS_15_HX$REGION15==3),sum(MEPS_15_HX$REGION15==4)))
 
+#Region
+Region_15_HX[2,]<-Region_15_HX/nrow(MEPS_15_HX)
+colnames(Region_15_HX)<-c("Northeast", "Midwest", "South", "West")
+Region_15_HX
+Region_15<-as.data.frame(cbind(sum(MEPS_15$REGION15==1),sum(MEPS_15$REGION15==2),sum(MEPS_15$REGION15==3),sum(MEPS_15$REGION15==4))); Region_15
+colnames(Region_15)<-c("Northeast", "Midwest", "South", "West")
+Region_t<-sum(Region_15)
+Region_15[2,]<-Region_15/Region_t;Region_15
+Region_Diff<-Region_15[2,]-Region_15_HX[2,]
+
+#Uninsured
+uninsured_15<-sum(MEPS_15$INSAT15X==2); uninsured_15
+MEPS_15_U_E<-MEPS_15$INSAT15X[MEPS_15$INSAT15X>-1]
+MEPS_15_U_P<-uninsured_15/length(MEPS_15_U_E); MEPS_15_U_P
+hist(MEPS_15$INSURC15)
+
+#MEPS14
+MEPS_14_HX<-sum(MEPS_14$HPXDE14==1);MEPS_14_HX/nrow(MEPS_14)
+hist(MEPS_15$INSURC15)
 
 
 
